@@ -25,7 +25,7 @@ export const PatientsLoader: FunctionComponent<props> = ({
   };
   return (
     <div>
-      <button onClick={makeRequest}>Load all patients</button>
+      <button role="loadBtn" onClick={makeRequest}>Load all patients</button>
     </div>
   );
 };
