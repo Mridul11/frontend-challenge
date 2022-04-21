@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
-import { PatientsSearch } from "./patients_search";
+import { PatientsSearch } from "../patients/patients_search";
 
 test("should check for input", async () => {
   const baseProps = {

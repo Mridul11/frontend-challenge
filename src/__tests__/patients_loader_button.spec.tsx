@@ -1,15 +1,13 @@
 import { fireEvent, render } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
-import { PatientsLoader } from "./patients_loader_button";
-import { PatientsSearch } from "./patients_search";
+import { PatientsLoader } from "../patients/patients_loader_button";
 
 test("should test for button click api call", async () => {
   const baseProps = {
-      loadPatients: jest.fn().mockImplementation(() => Promise.resolve()),
-      onLoaded: jest.fn().mockImplementation(() => Promise.resolve()),
-      updateLoading: jest.fn(),
-    },
-    makeRequest = jest.fn();
+    loadPatients: jest.fn().mockImplementation(() => Promise.resolve()),
+    onLoaded: jest.fn().mockImplementation(() => Promise.resolve()),
+    updateLoading: jest.fn(),
+  };
 
   const { getByRole } = render(<PatientsLoader {...baseProps} />);
 

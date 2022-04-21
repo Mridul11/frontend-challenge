@@ -18,8 +18,8 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App" role="app">
+      <header className="App-header" role="appHeader">
         <h1>Welcome to Heartbeat 🏥</h1>
         {error.status === "error" ? (
           <ToastBox title={error.title} status={error.status} />
@@ -56,17 +56,15 @@ function App() {
 export default App;
 
 function displayPatients(loading: boolean, patients: Patient[]) {
-  return (
-    <ul>
-      {loading ? (
-        <Loader active inline="centered" />
-      ) : (
-        patients.map((p, k) => (
-          <li style={{ listStyle: "none" }} key={k}>
-            ✅ {p.name}{" "}
-          </li>
-        ))
-      )}
+  return loading ? (
+    <Loader active inline="centered" role="loader"/>
+  ) : (
+    <ul role="patientList">
+      {patients.map((p, k) => (
+        <li style={{ listStyle: "none" }} key={k} role="patient">
+          ✅ {p.name}{" "}
+        </li>
+      ))}
     </ul>
   );
 }
